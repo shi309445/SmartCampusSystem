@@ -1,0 +1,48 @@
+{"id": 1, "source": "普通高等学校学生管理规定（节选）.md", "question": "学生申诉的期限是多久", "expected_articles": ["第六十条", "第六十二条"]}
+{"id": 2, "source": "普通高等学校学生管理规定（节选）.md", "question": "什么情况下会被开除学籍", "expected_articles": ["第五十二条"]}
+{"id": 3, "source": "普通高等学校学生管理规定（节选）.md", "question": "学生有哪些权利", "expected_articles": ["第六条"]}
+{"id": 4, "source": "普通高等学校学生管理规定（节选）.md", "question": "学生需要履行哪些义务", "expected_articles": ["第七条"]}
+{"id": 5, "source": "普通高等学校学生管理规定（节选）.md", "question": "学校能给学生哪些纪律处分", "expected_articles": ["第五十一条"]}
+{"id": 6, "source": "普通高等学校学生管理规定（节选）.md", "question": "处分决定书里必须写什么内容", "expected_articles": ["第五十三条"]}
+{"id": 7, "source": "普通高等学校学生管理规定（节选）.md", "question": "处分一般要持续多久", "expected_articles": ["第五十七条"]}
+{"id": 8, "source": "普通高等学校学生管理规定（节选）.md", "question": "学生的处分到期会自动解除吗", "expected_articles": ["第五十七条"]}
+{"id": 9, "source": "普通高等学校学生管理规定（节选）.md", "question": "学生能在学校里传教吗", "expected_articles": ["第四十三条"]}
+{"id": 10, "source": "普通高等学校学生管理规定（节选）.md", "question": "学生组织集会游行需要批准吗", "expected_articles": ["第四十六条"]}
+{"id": 11, "source": "普通高等学校学生管理规定（节选）.md", "question": "在校园网上发帖有什么限制", "expected_articles": ["第四十七条"]}
+{"id": 12, "source": "普通高等学校学生管理规定（节选）.md", "question": "学生可以自己成立社团吗", "expected_articles": ["第四十四条"]}
+{"id": 13, "source": "普通高等学校学生管理规定（节选）.md", "question": "学校对学生住宿有什么管理规定", "expected_articles": ["第四十八条"]}
+{"id": 14, "source": "普通高等学校学生管理规定（节选）.md", "question": "替考或者组织作弊会怎么处理", "expected_articles": [], "pending": true, "note": "新语料有整份《国家教育考试违规处理办法》，这条大概率该改成指向它——待补条款号"}
+{"id": 15, "source": "普通高等学校学生管理规定（节选）.md", "question": "论文抄袭会被开除吗", "expected_articles": ["第五十二条"]}
+{"id": 16, "source": "普通高等学校学生管理规定（节选）.md", "question": "学校处分我之前要告诉我理由吗", "expected_articles": ["第五十五条"]}
+{"id": 17, "source": "普通高等学校学生管理规定（节选）.md", "question": "开除学籍这种决定谁有权做", "expected_articles": ["第五十六条"]}
+{"id": 18, "source": "普通高等学校学生管理规定（节选）.md", "question": "学校奖励学生有哪些形式", "expected_articles": ["第五十条", "第四十九条"]}
+{"id": 19, "source": "普通高等学校学生管理规定（节选）.md", "question": "学生申诉处理委员会由哪些人组成", "expected_articles": ["第五十九条"]}
+{"id": 20, "source": "普通高等学校学生管理规定（节选）.md", "question": "对学校的复查结论不服还能怎么办", "expected_articles": ["第六十二条"]}
+{"id": 21, "source": "普通高等学校学生管理规定（节选）.md", "question": "省级教育部门接到申诉后会怎么处理", "expected_articles": ["第六十三条"]}
+{"id": 22, "source": "普通高等学校学生管理规定（节选）.md", "question": "多长时间不申诉就作废了", "expected_articles": ["第六十四条"]}
+{"id": 23, "source": "普通高等学校学生管理规定（节选）.md", "question": "学校自己的规定和教育部规定冲突了怎么办", "expected_articles": ["第六十五条"]}
+{"id": 24, "source": "普通高等学校学生管理规定（节选）.md", "question": "这个规定从什么时候开始施行", "expected_articles": ["第六十八条"]}
+{"id": 25, "source": "普通高等学校学生管理规定（节选）.md", "question": "留学生和港澳台学生也适用这个规定吗", "expected_articles": ["第六十六条"]}
+{"id": 26, "source": "普通高等学校学生管理规定（节选）.md", "question": "学校制定自己的学生管理规定要注意什么", "expected_articles": ["第六十七条"]}
+{"id": 27, "source": "普通高等学校学生管理规定（节选）.md", "question": "学生管理应该遵循什么原则", "expected_articles": ["第三条", "第五条"]}
+{"id": 28, "source": "普通高等学校学生管理规定（节选）.md", "question": "学生参加社会实践算不算权利", "expected_articles": ["第六条"]}
+{"id": 29, "source": "普通高等学校学生管理规定（节选）.md", "question": "学生能参与学校管理吗", "expected_articles": ["第四十条", "第六条"]}
+{"id": 30, "source": "普通高等学校学生管理规定（节选）.md", "question": "学生在校内打架斗殴会有什么后果", "expected_articles": ["第四十二条", "第五十一条"]}
+{"id": 31, "source": "普通高等学校学生管理规定（节选）.md", "question": "学生受到处分后材料会放进档案吗", "expected_articles": ["第五十八条"]}
+{"id": 32, "source": "普通高等学校学生管理规定（节选）.md", "question": "被开除学籍以后档案和户口怎么办", "expected_articles": ["第五十八条"]}
+{"id": 33, "source": "普通高等学校学生管理规定（节选）.md", "question": "勤工助学有什么要求", "expected_articles": ["第四十五条"]}
+{"id": 34, "source": "普通高等学校学生管理规定（节选）.md", "question": "参加课外活动会影响正常上课吗", "expected_articles": ["第四十五条"]}
+{"id": 35, "source": "普通高等学校学生管理规定（节选）.md", "question": "学校发现学生有违法行为可以采取什么措施", "expected_articles": ["第四十二条"]}
+{"id": 36, "source": "普通高等学校学生管理规定（节选）.md", "question": "校规和上位法抵触了学生能去投诉吗", "expected_articles": ["第六十五条"]}
+{"id": 37, "source": "普通高等学校学生管理规定（节选）.md", "question": "学生团体邀请校外人员来办讲座要走什么程序", "expected_articles": ["第四十四条"]}
+{"id": 38, "source": "普通高等学校学生管理规定（节选）.md", "question": "这个规定适用于哪些学生", "expected_articles": ["第二条"]}
+{"id": 39, "source": "普通高等学校学生管理规定（节选）.md", "question": "制定这个规定的目的是什么", "expected_articles": ["第一条"]}
+{"id": 40, "source": "普通高等学校学生管理规定（节选）.md", "question": "学生在校期间受到治安处罚会被开除吗", "expected_articles": ["第五十二条"]}
+{"id": 41, "question": "今天北京天气怎么样", "expected_articles": []}
+{"id": 42, "question": "转专业需要什么条件", "expected_articles": [], "note": "仍然没有：请销假规定管的是请假，不是转专业"}
+{"id": 43, "question": "休学手续怎么办", "expected_articles": [], "note": "难负例：请销假规定是相邻但不回答休学"}
+{"id": 44, "question": "毕业需要修满多少学分", "expected_articles": [], "pending": true, "note": "《优秀毕业生评选办法》的评选条件可能含学分/成绩要求，需确认后重标"}
+{"id": 45, "question": "图书馆的开放时间是几点", "expected_articles": []}
+{"id": 46, "question": "食堂饭卡怎么充值", "expected_articles": []}
+{"id": 47, "question": "怎么申请助学贷款的流程", "expected_articles": [], "pending": true, "note": "新语料已有助学金/困难认定/勤工助学等文件，0.9228 说明它应该改成正例"}
+{"id": 48, "question": "研究生导师怎么选", "expected_articles": []}

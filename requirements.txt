@@ -1,0 +1,18 @@
+fastapi==0.115.13
+uvicorn==0.34.0
+sqlalchemy==2.0.41
+pymysql==1.1.1
+pydantic-settings==2.7.1
+# app/harness/model.py 直接 import dotenv 读 .env（之前只靠 langchain 传递依赖）
+python-dotenv
+bcrypt==5.0.0
+PyJWT==2.13.0
+loguru==0.7.0
+python-multipart
+langchain==1.4.0
+langchain-deepseek
+langchain-milvus
+pymilvus
+langchain-huggingface
+sentence-transformers
+torch

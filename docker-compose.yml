@@ -1,0 +1,123 @@
+# 一键起「应用 + MySQL + Milvus」的开发/演示环境
+#
+#   docker compose up -d --build          # 首次（会拉 Milvus 相关镜像，约 1.5GB）
+#   docker compose logs -f app            # 看应用日志
+#   docker compose exec app python scripts/seed_test_data.py   # 灌测试数据
+#   docker compose down                   # 停（数据在命名卷里，不会丢）
+#   docker compose down -v                # 连数据一起删
+#
+# 说明：
+#   * app 的 .env 仍然从宿主机读（env_file），只有 DATABASE_URL / MILVUS_URI 被覆盖成容器网络里的地址；
+#   * models/ 用 bind mount 挂进来（4GB 权重不进镜像）；
+#   * Milvus 用 standalone 模式（etcd + minio + milvus 三个容器），够单机用。
+
+name: smart-campus-system
+
+services:
+  mysql:
+    image: mysql:8.0
+    container_name: scs-mysql
+    command:
+      - --character-set-server=utf8mb4
+      - --collation-server=utf8mb4_unicode_ci
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: smart_campus_system
+      TZ: Asia/Shanghai
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "127.0.0.1", "-uroot", "-proot"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+      start_period: 30s
+
+  etcd:
+    image: quay.io/coreos/etcd:v3.5.5
+    container_name: scs-etcd
+    environment:
+      ETCD_AUTO_COMPACTION_MODE: revision
+      ETCD_AUTO_COMPACTION_RETENTION: "1000"
+      ETCD_QUOTA_BACKEND_BYTES: "4294967296"
+      ETCD_SNAPSHOT_COUNT: "50000"
+    volumes:
+      - etcd_data:/etcd
+    command: etcd -advertise-client-urls=http://127.0.0.1:2379 -listen-client-urls http://0.0.0.0:2379 --data-dir /etcd
+    healthcheck:
+      test: ["CMD", "etcdctl", "endpoint", "health"]
+      interval: 30s
+      timeout: 20s
+      retries: 3
+
+  minio:
+    image: minio/minio:RELEASE.2023-03-20T20-16-18Z
+    container_name: scs-minio
+    environment:
+      MINIO_ACCESS_KEY: minioadmin
+      MINIO_SECRET_KEY: minioadmin
+    volumes:
+      - minio_data:/minio_data
+    command: minio server /minio_data --console-address ":9001"
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:9000/minio/health/live"]
+      interval: 30s
+      timeout: 20s
+      retries: 3
+
+  milvus:
+    image: milvusdb/milvus:v2.4.15
+    container_name: scs-milvus
+    command: ["milvus", "run", "standalone"]
+    security_opt:
+      - seccomp:unconfined
+    environment:
+      ETCD_ENDPOINTS: etcd:2379
+      MINIO_ADDRESS: minio:9000
+    volumes:
+      - milvus_data:/var/lib/milvus
+    ports:
+      - "19530:19530"   # SDK 连接口
+      - "9091:9091"     # 指标 / 健康检查
+    depends_on:
+      etcd:
+        condition: service_healthy
+      minio:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:9091/healthz"]
+      interval: 30s
+      timeout: 20s
+      retries: 5
+      start_period: 90s
+
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: scs-app
+    env_file:
+      - .env
+    environment:
+      # 容器网络里的服务名覆盖宿主机地址；其余配置沿用 .env
+      DATABASE_URL: mysql+pymysql://root:root@mysql:3306/smart_campus_system?charset=utf8mb4
+      MILVUS_URI: http://milvus:19530
+      TZ: Asia/Shanghai
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./models:/app/models:ro
+      - ./logs:/app/logs
+    depends_on:
+      mysql:
+        condition: service_healthy
+      milvus:
+        condition: service_healthy
+
+volumes:
+  mysql_data:
+  etcd_data:
+  minio_data:
+  milvus_data:

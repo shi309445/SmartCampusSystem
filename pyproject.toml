@@ -1,0 +1,12 @@
+[project]
+name = "smartcampussystem"
+version = "0.1.0"
+requires-python = ">=3.14"
+# 运行时依赖以 requirements.txt 为准（含版本锁定），这里不重复列
+dependencies = []
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+# -q：只打一行一个用例；失败时仍然给出完整 traceback
+addopts = "-q --strict-markers"
+# 测试库名可通过环境变量覆盖（见 tests/conftest.py）

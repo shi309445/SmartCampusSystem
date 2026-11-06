@@ -1,0 +1,8 @@
+# 开发 / 测试额外依赖（运行时依赖见 requirements.txt）
+-r requirements.txt
+
+pytest>=8,<9
+# 接口冒烟脚本与 FastAPI TestClient 都要用
+httpx
+# 数据库迁移（可选工具；create_all 仍然是启动时建表的主路径）
+alembic>=1.13,<2

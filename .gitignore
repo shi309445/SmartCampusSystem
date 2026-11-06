@@ -1,0 +1,54 @@
+# 环境与密钥（**绝不能提交**：里面有 DeepSeek / LangSmith / Tavily / DashScope 的真实 key）
+.env
+.env.*
+!.env.example
+
+# 虚拟环境
+.venv/
+venv/
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+
+# 日志（结构化 JSONL 落盘目录，运行时生成）
+logs/
+
+# 本地模型权重（约 4GB，按需下载；不要在仓库里传）
+models/
+
+# IDE
+.idea/
+.vscode/
+
+# 系统文件
+.DS_Store
+Thumbs.db
+
+# 测试数据种子脚本生成的交接文件（里面有测试账号的明文密码，按需重新生成）
+scripts/seed_manifest.json
+
+# 评测生成的基线 / 最近一次结果（模型有抖动，属于本地产物，不入库）
+scripts/eval_baseline_agent.json
+scripts/eval_last.json
+
+# 依赖工具在受限环境下的临时目录（uv 缓存、pytest 隔离安装）
+.uv-cache/
+.pytest-libs/
+
+# docker compose 的数据卷（bind mount 到工程目录时）
+volumes/
+
+# pytest / 测试框架在主目录留下的临时目录
+.pytest-tmp*/
+pytest-cache-files-*/
+pytest-of-*/
+tmp*/
+torchinductor_*/
+
+# DSH 沙箱 ACL 恢复记录（本机工具目录）
+.dsh-acl-recovery/
